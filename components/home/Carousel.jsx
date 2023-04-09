@@ -10,8 +10,8 @@ const images = [
 const HomeCarousel = () => {
   return (
     <Carousel autoplay className='absolute left-0 right-0'>
-      {images.map((src) => (
-        <CarouselImg src={src} />
+      {images.map((src, key) => (
+        <CarouselImg key={key} src={src} />
       ))}
     </Carousel>
   );
