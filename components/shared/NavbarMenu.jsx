@@ -13,19 +13,19 @@ const items = [
     icon: <CompassOutlined />,
     children: [
       {
-        label: '会社概要',
+        label: <Link href='/about'>会社概要</Link>,
         key: 'overview:1',
       },
       {
-        label: '旅行条件、旅行業約款等',
+        label: <Link href='/travel_condition'>旅行条件、旅行業約款等</Link>,
         key: 'overview:2',
       },
       {
-        label: 'プライバシーポリシー',
+        label: <Link href='/policy'>プライバシーポリシー</Link>,
         key: 'overview:3',
       },
       {
-        label: 'お問い合わせ',
+        label: <Link href='/contact'>お問い合わせ</Link>,
         key: 'overview:4',
       },
     ],
@@ -51,11 +51,11 @@ const items = [
     icon: <CoffeeOutlined />,
     children: [
       {
-        label: 'モンゴルのゲル',
+        label: <Link href='/blog/ger'>モンゴルのゲル</Link>,
         key: 'blog:1',
       },
       {
-        label: 'モンゴル料理',
+        label: <Link href='/blog/food'>モンゴル料理</Link>,
         key: 'blog:2',
       },
     ],

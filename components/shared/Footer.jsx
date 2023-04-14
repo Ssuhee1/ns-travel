@@ -1,21 +1,28 @@
 import { Image } from 'antd';
+import Link from 'next/link';
 import { IoIosArrowDown } from 'react-icons/io';
 const Footer = () => {
   return (
     <div className='flex flex-col items-center w-full '>
       <div className='flex flex-col w-full mb-20 px-[20px] md:px-[100px] lg:px-[180px] '>
-        <button className='bg-defaultYellow py-2 rounded-xl border-2 border-yellow-300 hover:bg-yellow-200 flex justify-center items-center'>
+        <Link
+          href='/'
+          className='bg-defaultYellow py-2 rounded-xl border-2 border-yellow-300 hover:bg-yellow-200 flex justify-center items-center'>
           トップページ
           <IoIosArrowDown className='ml-2 -rotate-90' />
-        </button>
-        <button className='bg-defaultYellow py-2 rounded-xl border-2 border-yellow-300 hover:bg-yellow-200 flex justify-center items-center'>
+        </Link>
+        <Link
+          href='/departure'
+          className='bg-defaultYellow py-2 rounded-xl border-2 border-yellow-300 hover:bg-yellow-200 flex justify-center items-center'>
           お申込からご出発まで
           <IoIosArrowDown className='ml-2 -rotate-90' />
-        </button>
-        <button className='bg-defaultYellow py-2 rounded-xl border-2 border-yellow-300 hover:bg-yellow-200 flex justify-center items-center'>
+        </Link>
+        <Link
+          href='/faq'
+          className='bg-defaultYellow py-2 rounded-xl border-2 border-yellow-300 hover:bg-yellow-200 flex justify-center items-center'>
           よくあるご質問 (FAQ)
           <IoIosArrowDown className='ml-2 -rotate-90' />
-        </button>
+        </Link>
       </div>
       <div className='bg-defaultGray w-full px-5 md:px-[100px] lg:px-[180px] py-10'>
         <div className='grid grid-cols-2 w-full gap-20'>
