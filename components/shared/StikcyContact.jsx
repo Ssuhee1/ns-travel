@@ -14,18 +14,21 @@ const StickyContact = () => {
             preview={false}
             src='/img/png/facebook.png'
             height={60}
+            width={60}
           />
           <Image
             className='cursor-pointer'
             preview={false}
             src='/img/png/instagram.png'
             height={60}
+            width={60}
           />
           <Image
             className='cursor-pointer'
             preview={false}
             src='/img/png/line.png'
             height={60}
+            width={60}
           />
         </Space>
       </Affix>
