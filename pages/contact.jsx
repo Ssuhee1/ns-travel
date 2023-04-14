@@ -3,7 +3,8 @@ import Footer from '@/components/shared/Footer';
 import Navbar from '@/components/shared/Navbar';
 import StickyContact from '@/components/shared/StikcyContact';
 import { BlueTitle } from '@/components/shared/Title';
-import { Checkbox, Form, Input, Radio } from 'antd';
+import { SendOutlined } from '@ant-design/icons';
+import { Button, Checkbox, Form, Input, Radio, notification } from 'antd';
 import { useState } from 'react';
 
 const Contact = () => {
@@ -25,6 +26,8 @@ const Contact = () => {
       idx: 0,
     },
   });
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSend = async () => {
     let isNotValid = false;
@@ -88,20 +91,36 @@ const Contact = () => {
       email,
     };
 
-    const response = await fetch('/api/mail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        to: email,
-        mainInfo,
-        text: text,
-        name: `${firstName} ${lastName}`,
-      }),
-    });
-    const result = await response.json();
-    console.log(result);
+    try {
+      setIsLoading(true);
+      const response = await fetch('/api/mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: email,
+          mainInfo,
+          text: text,
+          name: `${firstName} ${lastName}`,
+        }),
+      });
+      if (response.status === 200) {
+        notification.success({
+          message: 'Mail Sent',
+          description: 'Your message has been sent successfully.',
+        });
+      } else {
+        notification.error({
+          message: 'Mail Failed',
+          description:
+            'There was an error sending your message. Please try again later.',
+        });
+      }
+    } catch {
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -216,12 +235,14 @@ const Contact = () => {
             onChange={(e) => setText(e.target.value)}
           />
           <div className='w-full flex justify-center mt-5'>
-            <YellowButton
+            <Button
               type='submit'
-              label='Send'
               onClick={handleSend}
-              icon={false}
-            />
+              loading={isLoading}
+              icon={<SendOutlined />}
+              className='bg-defaultYellow flex items-center'>
+              Send
+            </Button>
           </div>
         </Form>
       </div>

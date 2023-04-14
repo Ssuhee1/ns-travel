@@ -5,9 +5,6 @@ import { mailOptions, trasnporter } from '@/utils/mail';
 const handler = async (req, res) => {
   if (req.method === 'POST') {
     const { to, text, name, mainInfo } = req.body;
-    if (!to || !text || !name) {
-      return res.status(404).end();
-    }
     try {
       await trasnporter.sendMail({
         ...mailOptions,
@@ -24,6 +21,11 @@ const handler = async (req, res) => {
     } catch {}
   }
 
-  return res.status(404).end;
+  if (req.method === 'GET') {
+    console.log(req);
+    return res.status(200).json({
+      message: 'Hello world',
+    });
+  }
 };
 export default handler;
