@@ -9,16 +9,10 @@ const Navbar = () => {
       <Link href='/'>
         <div className='flex w-full'>
           <Image
-            src='/img/svg/logo.svg'
+            src='/img/logo.jpg'
             height={40}
             preview={false}
             className='sm:mr-5'
-          />
-          <Image
-            src='/img/svg/logo-text-blue.svg'
-            height={40}
-            preview={false}
-            className='mr-5'
           />
         </div>
       </Link>
