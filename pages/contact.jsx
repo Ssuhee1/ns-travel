@@ -126,7 +126,7 @@ const Contact = () => {
   return (
     <div className='relative'>
       <Navbar />
-      <div className='md:mx-20 px-5 lg:mx-40 mb-20 mt-5'>
+      <div className='md:mx-24 px-5 lg:mx-48 xl:mx-64 2xl:mx-96 mb-20 mt-5'>
         <BlueTitle text='お問い合わせ' />
         <p className='text-orange-500 mb-5'>
           空席状況や日程など、なんでもお気軽にお問い合わせ下さい。一営業日以内に、折り返し弊社スタッフよりご連絡を差し上げます。

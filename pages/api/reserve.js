@@ -1,0 +1,40 @@
+import { mailOptions, trasnporter } from '@/utils/mail';
+
+const handler = async (req, res) => {
+  if (req.method === 'POST') {
+    const { mainInfo } = req.body;
+    try {
+      //   await trasnporter.sendMail({
+      //     ...mailOptions,
+      //     to: mainInfo.email,
+      //     subject: 'Contact',
+      //     text: 'This is contact email.',
+      //     html: `<h3>Contact from : ${name}</h3><p>${text}</p><hr/><hr/><p>${JSON.stringify(
+      //       mainInfo
+      //     )}</p>`,
+      //   });
+      //   await trasnporter.sendMail({
+      //     ...mailOptions,
+      //     to: mailOptions.from,
+      //     subject: 'Contact',
+      //     text: 'This is contact email.',
+      //     html: `<h3>Contact from : ${name}</h3><p>${text}</p><hr/><hr/><p>${JSON.stringify(
+      //       mainInfo
+      //     )}</p>`,
+      //   });
+      return res.status(200).json({
+        message: 'Email successfully sended',
+      });
+    } catch {
+      return res.status(404).end();
+    }
+  }
+
+  if (req.method === 'GET') {
+    console.log(req);
+    return res.status(200).json({
+      message: 'Hello world',
+    });
+  }
+};
+export default handler;

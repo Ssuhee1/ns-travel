@@ -10,6 +10,7 @@ import Schedule from '@/components/trip/Schedule';
 import TripTable from '@/components/trip/TripTable';
 import Other from '@/components/trip/Other';
 import Something from '@/components/trip/Something';
+import StickyReserver from '@/components/shared/StickyReserve';
 
 const tripTableData = {
   columns: [
@@ -129,7 +130,7 @@ export default function Trip1() {
       <div className='mt-2'>
         <YellowTitle text='遊牧民の生活 5日間' />
         <img src='/img/svg/trip1Full.svg' className='w-full' />
-        <div className='md:mx-20 px-5 lg:mx-40 mb-20 mt-5'>
+        <div className='md:mx-24 px-5 lg:mx-48 xl:mx-64 2xl:mx-96 mb-20 mt-5'>
           <Overview
             startDate='4月24日～9月15日'
             cost='209,000円- 299,000円'
@@ -173,6 +174,7 @@ export default function Trip1() {
       </div>
       <Footer />
       <StickyContact />
+      <StickyReserver id={2} />
     </div>
   );
 }

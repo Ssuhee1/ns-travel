@@ -4,7 +4,8 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-    <div className='flex md:mx-20 px-5 lg:mx-40 justify-between items-center h-[50px]'>
+    // md:mx-24 px-5 lg:mx-48 xl:mx-64 2xl:mx-96 mb-20
+    <div className='flex md:mx-24 px-5 lg:mx-48 xl:mx-64 2xl:mx-96 justify-between items-center h-[50px]'>
       <Link href='/'>
         <div className='flex w-full'>
           <Image

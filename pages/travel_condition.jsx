@@ -8,7 +8,7 @@ const TravelCondition = () => {
   return (
     <div className='relative'>
       <Navbar />
-      <div className='md:mx-20 px-5 lg:mx-40 mb-20 mt-5'>
+      <div className='md:mx-24 px-5 lg:mx-48 xl:mx-64 2xl:mx-96 mb-20 mt-5'>
         <BlueTitle text='旅行条件、旅行業約款等' />
         <YellowTitle text='モンゴル旅行各モデルぷらん 旅行条件' />
         <div className='grid grid-cols-3 gap-4 bg-defaultGray p-5'>

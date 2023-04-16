@@ -10,7 +10,7 @@ const About = () => {
       <div className='mt-2'>
         <YellowTitle text='会社案内' />
         <img src='/img/svg/company.svg' />
-        <div className='md:mx-20 px-5 lg:mx-40 mb-20 mt-5'>
+        <div className='md:mx-24 px-5 lg:mx-48 xl:mx-64 2xl:mx-96 mb-20 mt-5'>
           <BlueTitle text='我々について' />
           <p>
             人々が集まると、経験を共有し、交流し、成長する機会が生まれます。私たちの使命は、そのビジョンを実現することです。

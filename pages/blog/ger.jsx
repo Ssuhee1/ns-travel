@@ -9,7 +9,7 @@ const Ger = () => {
       <Navbar />
       <BlueTitle text='モンゴルのゲル' />
       <img src='/img/svg/ger.svg' className='w-full' />
-      <div className='md:mx-20 px-5 lg:mx-40 mb-20 mt-5'>
+      <div className='md:mx-24 px-5 lg:mx-48 xl:mx-64 2xl:mx-96 mb-20 mt-5'>
         <div className='mb-10'>
           <YellowTitle text='ゲルの特徴' />
           <p>

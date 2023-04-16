@@ -13,6 +13,9 @@ module.exports = {
         defaultOrange: '#FF9A03',
         defaultGray: '#D9D9D9',
       },
+      theme: {
+        '2xl': '1440px',
+      },
     },
   },
   plugins: [],

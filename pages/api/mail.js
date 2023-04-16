@@ -18,7 +18,9 @@ const handler = async (req, res) => {
       return res.status(200).json({
         message: 'Email successfully sended',
       });
-    } catch {}
+    } catch {
+      return res.status(404).end();
+    }
   }
 
   if (req.method === 'GET') {
