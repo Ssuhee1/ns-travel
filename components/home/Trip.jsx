@@ -1,12 +1,15 @@
 import { Card, Image, Space } from 'antd';
 import { YellowTitle } from '../shared/Title';
+import { useRouter } from 'next/router';
 const { Meta } = Card;
 const Trip = () => {
+  const router = useRouter();
   return (
     <div className='mt-10'>
       <YellowTitle text='モンゴルツアー一覧' />
       <div className='grid grid-cols-2 gap-10'>
         <Card
+          onClick={() => router.push('/trip/1')}
           hoverable
           style={{ width: '100%' }}
           cover={
@@ -28,6 +31,7 @@ const Trip = () => {
           />
         </Card>
         <Card
+          onClick={() => router.push('/trip/2')}
           hoverable
           style={{ width: '100%' }}
           cover={

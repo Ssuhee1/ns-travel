@@ -1429,8 +1429,10 @@ const Book = () => {
           if (response.status === 200) {
             notification.success({
               message: 'Reservation Sent',
-              description: 'Your request is successfull. We will contact you',
+              description:
+                'Your request is successfull. We will contact you as soon as possible',
             });
+            setCurrentStep((prev) => prev + 1);
           } else {
             notification.error({
               message: 'Reservation Failed',
@@ -1498,45 +1500,50 @@ const Book = () => {
         </div>
       );
     } else if (currentStep === 4) {
+      const finish = () => {
+        router.push('/');
+      };
       render = (
         <div>
-          <div>
+          <div className='mb-5'>
             仮予約を受け付けました。ご⼊⼒いただき誠にありがとうございます。
             弊社が申込⾦（50,000）を受領した時点で、正式なご契約成⽴となります。⼀営業⽇以内に空席状況を確認し、担当者より連絡いたしますので、今しばらくお待ちいただきますようお願い申し上げます。
             仮予約をお受けした事をお知らせする⾃動返信メールをお送りします。
             ※⾃動返信メールが届かない場合、弊社で仮予約を確認できていない可能性がございます。お⼿数ですが、メールまたはお電話にてご⼀報ください。
           </div>
-          <div>
+          <div className='mb-5'>
             <p>お電話でのお問い合わせ: 0000-0000</p>
-            <p>E-mailでのお問い合わせ: test@gmail.com</p>
+            <p>メールでのお問い合わせ: sarantumen1@gmail.com</p>
           </div>
-          <div>
-            <Card
-              hoverable
-              style={{ width: '100%' }}
-              cover={
-                <Image
-                  alt='trip1'
-                  src='/img/svg/trip1.svg'
-                  height={'auto'}
-                  preview={false}
+          <div className='w-full flex justify-center mb-5'>
+            <div className='w-[50%]'>
+              <Card
+                hoverable
+                style={{ width: '100%' }}
+                cover={
+                  <Image
+                    alt='trip1'
+                    src='/img/svg/trip1.svg'
+                    height={'auto'}
+                    preview={false}
+                  />
+                }>
+                <Meta
+                  title='乗馬 (6日間)'
+                  description={
+                    <Space direction='vertical' size='small'>
+                      <p>出発日 4月28日～9月25日</p>
+                      <p>旅行代金 259,000円- 319,000円</p>
+                    </Space>
+                  }
                 />
-              }>
-              <Meta
-                title='乗馬 (6日間)'
-                description={
-                  <Space direction='vertical' size='small'>
-                    <p>出発日 4月28日～9月25日</p>
-                    <p>旅行代金 259,000円- 319,000円</p>
-                  </Space>
-                }
-              />
-            </Card>
+              </Card>
+            </div>
           </div>
           <ButtonCtrl
             disabled1={false}
             onClick1={() => setCurrentStep((prev) => prev - 1)}
-            onClick2={() => console.log('finished')}
+            onClick2={finish}
             button2Text='完了'
           />
         </div>

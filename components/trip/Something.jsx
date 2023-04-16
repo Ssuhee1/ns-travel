@@ -1,13 +1,16 @@
 import { Card, Image, Space } from 'antd';
 import { BlueTitle } from '../shared/Title';
+import { useRouter } from 'next/router';
 const { Meta } = Card;
 const Something = ({ trip = 1 }) => {
+  const router = useRouter();
   return (
     <div>
       <BlueTitle text='類似ツアー' />
       <div className='flex justify-center'>
         <div className='w-80'>
           <Card
+            onClick={() => router.push(`/trip/${trip === 1 ? 2 : 1}`)}
             hoverable
             style={{ width: '100%' }}
             cover={

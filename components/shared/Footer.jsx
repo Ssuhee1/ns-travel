@@ -29,11 +29,21 @@ const Footer = () => {
         <div className='grid grid-cols-2 w-full gap-20'>
           <div className='flex flex-col items-center w-full'>
             <h1 className='text-2xl font-semibold mb-5'>ご利用ガイド</h1>
-            <p className='my-5'>よくあるご質問（FAQ）</p>
-            <p className='my-5'>お申込からご出発まで</p>
-            <p className='my-5'>旅行条件、旅行業約款等</p>
-            <p className='my-5'>プライバシーポリシー</p>
-            <p className='my-5'>会社概要</p>
+            <Link href='/faq'>
+              <p className='my-5'>よくあるご質問（FAQ）</p>
+            </Link>
+            <Link href='/faq'>
+              <p className='my-5'>お申込からご出発まで</p>
+            </Link>
+            <Link href='/travel_condition'>
+              <p className='my-5'>旅行条件、旅行業約款等</p>
+            </Link>
+            <Link href='/policy'>
+              <p className='my-5'>プライバシーポリシー</p>
+            </Link>
+            <Link href='/about'>
+              <p className='my-5'>会社概要</p>
+            </Link>
           </div>
           <div className='flex flex-col'>
             <div className='flex flex-col items-center'>
@@ -46,25 +56,33 @@ const Footer = () => {
               <h1 className='text-2xl font-semibold mb-5'>
                 モンゴルツアー一覧
               </h1>
-              <p className='my-5'>乗馬 6日間</p>
-              <p className='my-5'>遊牧民の生活 5日間</p>
+              <Link href='/trip/1'>
+                <p className='my-5'>乗馬 6日間</p>
+              </Link>
+              <Link href='/trip/2'>
+                <p className='my-5'>遊牧民の生活 5日間</p>
+              </Link>
             </div>
           </div>
         </div>
         <div className='w-full flex justify-end mt-10'>
           <div className='grid grid-cols-3 gap-5'>
-            <Image
-              className='cursor-pointer'
-              preview={false}
-              src='/img/png/facebook.png'
-              height={60}
-            />
-            <Image
-              className='cursor-pointer'
-              preview={false}
-              src='/img/png/instagram.png'
-              height={60}
-            />
+            <Link href='https://www.facebook.com/saran.tumen'>
+              <Image
+                className='cursor-pointer'
+                preview={false}
+                src='/img/png/facebook.png'
+                height={60}
+              />
+            </Link>
+            <Link href='https://www.instagram.com/saran_0119'>
+              <Image
+                className='cursor-pointer'
+                preview={false}
+                src='/img/png/instagram.png'
+                height={60}
+              />
+            </Link>
             <Image
               className='cursor-pointer'
               preview={false}

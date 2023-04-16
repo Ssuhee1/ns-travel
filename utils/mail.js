@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
-const email = '1998bsuhe@gmail.com';
-const pass = 'ydnbpfbeesanyveq';
+const email = process.env.EMAIL;
+const pass = process.env.PASS;
 
 export const trasnporter = nodemailer.createTransport({
   service: 'gmail',
@@ -14,10 +14,3 @@ export const trasnporter = nodemailer.createTransport({
 export const mailOptions = {
   from: email,
 };
-
-// REDASH_MAIL_SERVER=smtp.gmail.com
-// REDASH_MAIL_PORT=465
-// REDASH_MAIL_USERNAME=1998bsuhe@gmail.com
-// REDASH_MAIL_PASSWORD=ydnbpfbeesanyveq
-// REDASH_MAIL_USE_SSL=true
-// REDASH_MAIL_USE_TLS=false

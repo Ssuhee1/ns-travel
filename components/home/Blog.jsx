@@ -1,7 +1,9 @@
 import { BlueTitle } from '../shared/Title';
 import { Image } from 'antd';
 import { YellowButton } from '../shared/Button';
+import { useRouter } from 'next/router';
 const Blog = () => {
+  const router = useRouter();
   return (
     <div className='mt-10'>
       <BlueTitle text='ブログ' />
@@ -12,7 +14,10 @@ const Blog = () => {
           <Image preview={false} src='img/svg/ger2.svg' />
           <Image preview={false} src='img/svg/ger3.svg' />
         </div>
-        <YellowButton label='もっと見る' onClick={() => console.log('ger')} />
+        <YellowButton
+          label='もっと見る'
+          onClick={() => router.push('/blog/ger')}
+        />
       </div>
       <div className='w-full flex flex-col items-center mt-6'>
         <h1 className='text-2xl font-semibold mb-5'>モンゴル料理</h1>
@@ -21,7 +26,10 @@ const Blog = () => {
           <Image preview={false} src='img/svg/food2.svg' />
           <Image preview={false} src='img/svg/food3.svg' />
         </div>
-        <YellowButton label='もっと見る' onClick={() => console.log('food')} />
+        <YellowButton
+          label='もっと見る'
+          onClick={() => router.push('/blog/food')}
+        />
       </div>
     </div>
   );
